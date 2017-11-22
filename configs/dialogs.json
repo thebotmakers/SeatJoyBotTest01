@@ -1,0 +1,31 @@
+{
+    "dialogs": [
+        {
+            "bfId": "cj8lomv3v0000qcjxfw59pgm6",
+            "name": "/greeting",
+            "steps": [
+                {
+                    "bfId": "cj8lon3aq0000rgjxemkmdck4",
+                    "type": "text",
+                    "text": "Hey!"
+                },
+                {
+                    "type": "text",
+                    "text": "Nice to talk with you!",
+                    "bfId": "cj98no0qp00003c5mkz8r9smc"
+                }
+            ]
+        },
+        {
+            "bfId": "cj98nersr00003c5mos9hgalz",
+            "name": "/goodbye",
+            "steps": [
+                {
+                    "type": "text",
+                    "text": "See you later!",
+                    "bfId": "cj98nfjhj00023c5mzhqjjkpo"
+                }
+            ]
+        }        
+    ]
+}

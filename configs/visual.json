@@ -1,0 +1,34 @@
+{
+    "regex-recognizer": {
+        "draggable": {
+            "offset": {
+                "top": 67.03125,
+                "left": 46.77082824707031
+            }
+        },
+        "offset": {
+            "top": 94,
+            "left": 766
+        }
+    },
+    "dialogs-cj8lomv3v0000qcjxfw59pgm6": {
+        "draggable": {
+            "offset": {
+                "top": 67.69097900390625,
+                "left": 565.3819427490234
+            }
+        },
+        "offset": {
+            "top": 469,
+            "left": 896
+        }
+    },
+    "dialogs-cj98nersr00003c5mos9hgalz": {
+        "draggable": {
+            "offset": {
+                "top": 273.50697326660156,
+                "left": 565.4861297607422
+            }
+        }
+    }
+}

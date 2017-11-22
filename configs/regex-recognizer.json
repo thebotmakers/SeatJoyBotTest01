@@ -1,0 +1,14 @@
+{
+    "items": [
+        {
+            "bfId": "cj8lol4n10000l2jxeutta9nk",
+            "regex": "hi",
+            "dialog": "/greeting"
+        },
+        {
+            "regex": "bye",
+            "dialog": "/goodbye",
+            "bfId": "cj98ndpxr00003c5mcp2xc0qc"
+        }
+    ]
+}
