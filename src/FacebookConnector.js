@@ -1,6 +1,7 @@
 const async = require("async");
 const axios = require('axios');
 const { Message } = require('botbuilder');
+const accessTokens = require('./AccessTokens.json');
 
 class FacebookConnector {
 
@@ -58,7 +59,7 @@ class FacebookConnector {
                     if (msg.text) {
                         console.log(msg.text);
 
-                        let url = 'https://graph.facebook.com/v2.6/me/messages?access_token=EAAG9uCcfaL8BALHiHQOKP64O5V75qAmJv1BEzoF4PfcpkzN4FZBqXbp3VSHZAhrn3ZC4JmUMNkNpAjg5aPCabvRfwekmLKT8KERDnjZB3hjy2kCOMY5tNgZBinkKkZB58KkkHRzNlWCB5PklbKenxGQPP64LloFZAhWSU0taSTA9HHibQA4siK2HAevRdg4EaXDbJHAwP6rcAZDZD';
+                        let url = `https://graph.facebook.com/v2.6/me/messages?access_token=${accessTokens[msg.address.bot.id].access_token}`;
                         let message = {
                             messaging_type: 'RESPONSE',
                             recipient: {
