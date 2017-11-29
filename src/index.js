@@ -4,6 +4,8 @@ const path = require('path');
 const botbuilder = require('botbuilder');
 const express = require("express");
 const botsfactory = require('@botsfactory/botsfactory');
+const { FacebookConnector } = require('./FacebookConnector.js');
+
 const EXIT_CODE_RESTART = 107;
 
 if (cluster.isMaster && process.env.NODE_ENV !== "development") {
@@ -23,12 +25,10 @@ if (cluster.isMaster && process.env.NODE_ENV !== "development") {
 
 
 function start() {
-    const connector = new botbuilder.ChatConnector({
-        appId: process.env.MICROSOFT_APP_ID,
-        appPassword: process.env.MICROSOFT_APP_PASSWORD
-    });
+    const connector = new FacebookConnector();
 
     const server = express();
+    
     var bot = new botbuilder.UniversalBot(connector);
 
     const intents = new botbuilder.IntentDialog({ recognizers: [], recognizeOrder: botbuilder.RecognizeOrder.series })
@@ -48,10 +48,14 @@ function start() {
 
         // Handle Bot Framework messages
         server.post('/api/messages', connector.listen());
+        
+        server.get('/api/messages', function (req, res) {
+            res.send(req.query['hub.challenge']);
+        });
 
         const listener = server.listen(process.env.PORT || 8989, function () {
             console.log('Bot started listening on', listener.address().address, listener.address().port);
-        })        
+        })
     });
 }
 
