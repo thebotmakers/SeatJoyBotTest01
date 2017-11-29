@@ -22,5 +22,6 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1"
-  }
+  },
+  "main": "src/index.js"
 }
