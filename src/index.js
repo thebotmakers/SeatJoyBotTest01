@@ -28,7 +28,7 @@ function start() {
     const connector = new FacebookConnector();
 
     const server = express();
-    
+
     var bot = new botbuilder.UniversalBot(connector);
 
     const intents = new botbuilder.IntentDialog({ recognizers: [], recognizeOrder: botbuilder.RecognizeOrder.series })
@@ -48,9 +48,13 @@ function start() {
 
         // Handle Bot Framework messages
         server.post('/api/messages', connector.listen());
-        
+
         server.get('/api/messages', function (req, res) {
             res.send(req.query['hub.challenge']);
+        });
+
+        server.get('/', function (req, res) {
+            res.send('Hi :D');
         });
 
         const listener = server.listen(process.env.PORT || 8989, function () {
