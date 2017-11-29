@@ -88,7 +88,7 @@ class FacebookConnector {
     };
 
     startConversation(address, cb) {
-        var adr = { ...address }
+        var adr = Object.assign({}, address);
         adr.conversation = { id: 'Convo1' };
         cb(null, adr);
     };
