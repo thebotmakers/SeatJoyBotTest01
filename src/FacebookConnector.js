@@ -1,4 +1,3 @@
-const async = require("async");
 const axios = require('axios');
 const { Message } = require('botbuilder');
 const accessTokens = require('./AccessTokens.json');
@@ -48,7 +47,7 @@ class FacebookConnector {
     send(messages) {
         var _this = this;
 
-        messages.forEach(async (msg) => {
+        messages.forEach((msg) => {
             try {
 
                 if (msg.type == 'message') {
@@ -70,8 +69,13 @@ class FacebookConnector {
                             }
                         };
 
-                        let newMsgResponse = await axios.post(url, message);
-                        console.log(newMsgResponse);
+                        axios.post(url, message)
+                            .then((response) => {
+                                console.log('Message sent successfully!');
+                            })
+                            .catch((error) => {
+                                console.log(error);
+                            });
                     }
                 } else {
                     console.log(`Message type is: ${msg.type}.`);

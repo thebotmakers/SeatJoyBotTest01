@@ -8,7 +8,7 @@
     "name": "botsfactory"
   },
   "engines": {
-    "node": "8.9.0"
+    "node": "6.9.1"
   },
   "dependencies": {
     "@botsfactory/admin": "latest",
